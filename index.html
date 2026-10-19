@@ -269,7 +269,7 @@ footer{border-top:1.5px dashed var(--line2);background:var(--paper2);padding:66p
 .capcard p{margin-top:10px;color:var(--muted);font-size:13.5px;line-height:1.95}
 @media(max-width:900px){.capgrid{grid-template-columns:1fr}}
 
-/* v1.3.0 能力详解节（逐项展开 + SVG 示意） */
+/* v1.4.0 能力详解节（逐项展开 + SVG 示意） */
 .capdetail{padding:92px 0;background:#f1e9d7}
 .capdetail .wrap{max-width:1160px;margin:0 auto;padding:0 22px}
 .cdhead h2{font-size:clamp(26px,3.4vw,40px);margin:0 0 10px;line-height:1.25}
@@ -297,7 +297,7 @@ footer{border-top:1.5px dashed var(--line2);background:var(--paper2);padding:66p
   <div class="navlinks">
     <a href="#flow">流程</a><a href="#dual">双路径</a><a href="#ai">AI 辅助</a><a href="#gov">数据</a><a href="#delivery">交付</a>
   </div>
-  <span class="navstamp">v1.3.0</span>
+  <span class="navstamp">v1.4.1</span>
 </nav>
 
 <main id="main">
@@ -527,7 +527,7 @@ footer{border-top:1.5px dashed var(--line2);background:var(--paper2);padding:66p
 <line x1="34" y1="118" x2="94" y2="118"/><line x1="34" y1="114" x2="34" y2="122"/><line x1="64" y1="114" x2="64" y2="122"/><line x1="94" y1="114" x2="94" y2="122"/>
 <text x="36" y="132" font-size="8" fill="currentColor" stroke="none" opacity=".7">0 — 50 — 100 m</text></g>
 <text x="34" y="46" font-size="9.5" fill="currentColor" stroke="none">XX 村 · 宅基地调查图</text>
-<text x="34" y="58" font-size="8" fill="currentColor" stroke="none" opacity=".65">CGCS2000 · 1:2000 · v1.3.0</text>
+<text x="34" y="58" font-size="8" fill="currentColor" stroke="none" opacity=".65">CGCS2000 · 1:2000 · v1.4.1</text>
 <line x1="32" y1="140" x2="212" y2="140" opacity=".5"/>
 <text x="34" y="148" font-size="7.5" fill="currentColor" stroke="none" opacity=".6">图上标号 ↔ 台账表编号一一对应</text>
 </svg></figure>
@@ -535,7 +535,7 @@ footer{border-top:1.5px dashed var(--line2);background:var(--paper2);padding:66p
           <span class="cdnum">C.06 · 成果图</span>
           <h3>带版式的出图</h3>
           <p>一键出成果图：图例、指北针、比例尺、坐标系与版本号在图廊如实标注，A4/A3 横竖可选，200 DPI 打印即用；影像底图经服务端代理拼接，不受浏览器跨域限制。</p>
-          <p>v1.3.0 起支持分地类成套出图：选一类调研对象，图上每个地块标编号，台账表同编号一行带调查记录，图和表对得严丝合缝；还没调查的地块照常列出、标「待调查」。</p>
+          <p>v1.4.0 起支持分地类成套出图：选一类调研对象，图上每个地块标编号，台账表同编号一行带调查记录，图和表对得严丝合缝；还没调查的地块照常列出、标「待调查」。</p>
         </div>
       </article>
       <article class="cditem">
@@ -766,6 +766,8 @@ footer{border-top:1.5px dashed var(--line2);background:var(--paper2);padding:66p
         <div class="body"><h4>调研报告 Word</h4><p>项目概况、图斑统计、调查记录、诉求与照片墙自动成册，用于汇报留存；页内如实注明口径，正式交账以成果表为准。</p><span class="fmt">一键成册 · 含口径附注</span></div></div>
       <div class="it"><span class="lab">图·表 · 成套</span>
         <div class="body"><h4>分地类调查图 + 台账表</h4><p>选一类调研对象一键出两张：图上标编号，表内同编号一行带着调查记录，一一对应；还没调查的地块照常列出、标「待调查」。</p><span class="fmt">编号对应 · 字段随模板</span></div></div>
+      <div class="it"><span class="lab">网页 · HTML</span>
+        <div class="body"><h4>单文件浏览页</h4><p>打开就是一张能缩放的调研地图：图斑按地类着色，图戳、诉求、照片点位分层可点；内嵌底图快照与照片缩略图，双击即开、不连网、只读可转发。</p><span class="fmt">地图为纲 · 只读 · 单文件</span></div></div>
     </div>
   </div>
 </section>
@@ -777,7 +779,7 @@ footer{border-top:1.5px dashed var(--line2);background:var(--paper2);padding:66p
     <h2>从现场记录，<br>走向<em>项目成果</em>。</h2>
     <p class="sub2">连接外业调查、资料整理与团队协作。</p>
     <div class="stats">
-      <span class="stat"><b>v1.3.0</b>当前版本</span>
+      <span class="stat"><b>v1.4.1</b>当前版本</span>
       <span class="stat"><b>97</b>API 路由</span>
       <span class="stat"><b>686</b>自动化测试</span>
       <span class="stat"><b>19</b>业务数据表</span>
@@ -876,7 +878,7 @@ footer{border-top:1.5px dashed var(--line2);background:var(--paper2);padding:66p
 })();
 </script>
 <script>
-/* v1.3.0 能力详解节入场动画（独立块：不依赖页面主 IIFE 的插入位置） */
+/* v1.4.0 能力详解节入场动画（独立块：不依赖页面主 IIFE 的插入位置） */
 (function(){
   if(!(window.gsap && window.ScrollTrigger)) return;
   gsap.registerPlugin(ScrollTrigger);
