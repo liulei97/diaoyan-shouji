@@ -297,7 +297,7 @@ footer{border-top:1.5px dashed var(--line2);background:var(--paper2);padding:66p
   <div class="navlinks">
     <a href="#flow">流程</a><a href="#dual">双路径</a><a href="#ai">AI 辅助</a><a href="#gov">数据</a><a href="#delivery">交付</a>
   </div>
-  <span class="navstamp">v1.4.1</span>
+  <span class="navstamp">v1.5.0</span>
 </nav>
 
 <main id="main">
@@ -402,7 +402,7 @@ footer{border-top:1.5px dashed var(--line2);background:var(--paper2);padding:66p
     <p class="lbfoot">还有一批细功夫：<b>村庄概况年度模板</b>（荣誉 · 定位 · 资源盘点）、<b>待核清单与证据完备度</b>、<b>多用户行级数据归属</b>、<b>调研进度看板</b>（图斑/记录/诉求分布与成员工作量），顺手就有。</p>
   </div>
 </section>
-<!-- v1.3.0 展示页细化：能力详解节（8 项逐一展开 + 手写 SVG 示意图） -->
+<!-- v1.4.0 展示页细化：能力详解节（8 项逐一展开 + 手写 SVG 示意图） -->
 <section class="capdetail" id="capdetail">
   <div class="wrap">
     <div class="cdhead">
@@ -527,7 +527,7 @@ footer{border-top:1.5px dashed var(--line2);background:var(--paper2);padding:66p
 <line x1="34" y1="118" x2="94" y2="118"/><line x1="34" y1="114" x2="34" y2="122"/><line x1="64" y1="114" x2="64" y2="122"/><line x1="94" y1="114" x2="94" y2="122"/>
 <text x="36" y="132" font-size="8" fill="currentColor" stroke="none" opacity=".7">0 — 50 — 100 m</text></g>
 <text x="34" y="46" font-size="9.5" fill="currentColor" stroke="none">XX 村 · 宅基地调查图</text>
-<text x="34" y="58" font-size="8" fill="currentColor" stroke="none" opacity=".65">CGCS2000 · 1:2000 · v1.4.1</text>
+<text x="34" y="58" font-size="8" fill="currentColor" stroke="none" opacity=".65">CGCS2000 · 1:2000 · v1.5.0</text>
 <line x1="32" y1="140" x2="212" y2="140" opacity=".5"/>
 <text x="34" y="148" font-size="7.5" fill="currentColor" stroke="none" opacity=".6">图上标号 ↔ 台账表编号一一对应</text>
 </svg></figure>
@@ -535,7 +535,7 @@ footer{border-top:1.5px dashed var(--line2);background:var(--paper2);padding:66p
           <span class="cdnum">C.06 · 成果图</span>
           <h3>带版式的出图</h3>
           <p>一键出成果图：图例、指北针、比例尺、坐标系与版本号在图廊如实标注，A4/A3 横竖可选，200 DPI 打印即用；影像底图经服务端代理拼接，不受浏览器跨域限制。</p>
-          <p>v1.4.0 起支持分地类成套出图：选一类调研对象，图上每个地块标编号，台账表同编号一行带调查记录，图和表对得严丝合缝；还没调查的地块照常列出、标「待调查」。</p>
+          <p>v1.4.0 起支持分地类成套出图：选一类调研对象，图上每个地块标编号，台账表同编号一行带调查记录，图和表对得严丝合缝；还没调查的地块照常列出、标「待调查」。</p>v1.5.0 起旧 ArcMap 的 .style/.lyr 配色也能直接导入用于出图（.style 全量接入，.lyr 按配色参考口径）。
         </div>
       </article>
       <article class="cditem">
@@ -751,7 +751,7 @@ footer{border-top:1.5px dashed var(--line2);background:var(--paper2);padding:66p
   <div class="wrap">
     <div class="shead center">
       <h2>把调查记录，<br>整理成<em>可用成果</em>。</h2>
-      <p>按后续工作需要，导出 CAD 图形、GIS 数据、Excel 台账或 GeoJSON 文件，衔接图形校核、数据处理与项目交付。</p>
+      <p>按后续工作需要，导出 CAD 图形、GIS 数据（SHP / File GDB）、Excel 台账或 GeoJSON 文件，衔接图形校核、数据处理与项目交付。</p>
     </div>
     <div class="acc">
       <div class="it"><span class="lab">CAD · DXF</span>
@@ -768,6 +768,8 @@ footer{border-top:1.5px dashed var(--line2);background:var(--paper2);padding:66p
         <div class="body"><h4>分地类调查图 + 台账表</h4><p>选一类调研对象一键出两张：图上标编号，表内同编号一行带着调查记录，一一对应；还没调查的地块照常列出、标「待调查」。</p><span class="fmt">编号对应 · 字段随模板</span></div></div>
       <div class="it"><span class="lab">网页 · HTML</span>
         <div class="body"><h4>单文件浏览页</h4><p>打开就是一张能缩放的调研地图：图斑按地类着色，图戳、诉求、照片点位分层可点；内嵌底图快照与照片缩略图，双击即开、不连网、只读可转发。</p><span class="fmt">地图为纲 · 只读 · 单文件</span></div></div>
+      <div class="it"><span class="lab">数据库 · GDB</span>
+        <div class="body"><h4>成果 File GDB</h4><p>调查成果一键导出 File Geodatabase：公共列、模板字段与现场补录字段自动并层，重复组拆明细表、字段装不下的进长表兜底；导出前整库读回校验。</p><span class="fmt">动态字段 · zip 交付</span></div></div>
     </div>
   </div>
 </section>
@@ -779,9 +781,9 @@ footer{border-top:1.5px dashed var(--line2);background:var(--paper2);padding:66p
     <h2>从现场记录，<br>走向<em>项目成果</em>。</h2>
     <p class="sub2">连接外业调查、资料整理与团队协作。</p>
     <div class="stats">
-      <span class="stat"><b>v1.4.1</b>当前版本</span>
-      <span class="stat"><b>97</b>API 路由</span>
-      <span class="stat"><b>686</b>自动化测试</span>
+      <span class="stat"><b>v1.5.0</b>当前版本</span>
+      <span class="stat"><b>99</b>API 路由</span>
+      <span class="stat"><b>747</b>自动化测试</span>
       <span class="stat"><b>19</b>业务数据表</span>
     </div>
     <a class="btn btn-pri" href="#top">回到顶部，再看一遍</a>
