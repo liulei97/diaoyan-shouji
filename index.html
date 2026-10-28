@@ -251,13 +251,12 @@ footer{border-top:1px solid var(--line);background:#fff;padding:66px 0 40px}
 
 /* v1.10.0 版本迭代时间线（#changelog） */
 .cl{list-style:none;margin:34px 0 0;padding:0}
-.cl li{display:grid;grid-template-columns:92px 52px 1fr;gap:12px;padding:12px 0;border-bottom:1px dashed var(--line);align-items:baseline}
+.cl li{display:grid;grid-template-columns:96px 1fr;gap:12px;padding:12px 0;border-bottom:1px dashed var(--line);align-items:baseline}
 .cl li:last-child{border-bottom:0}
 .clv{font-family:var(--disp,var(--mono,inherit));font-weight:800;text-align:right;color:var(--ink);font-size:15px;white-space:nowrap}
-.cl time{font-size:12px;color:var(--muted);white-space:nowrap}
 .cl p{margin:0;color:var(--muted);font-size:13.5px;line-height:1.9}
-.cl li:first-child .clv, .cl li:first-child time{color:var(--accent)}
-@media(max-width:720px){.cl li{grid-template-columns:74px 1fr;}.cl time{display:none}.cl p{grid-column:2}}
+.cl li:first-child .clv{color:var(--accent)}
+@media(max-width:720px){.cl li{grid-template-columns:74px 1fr;}.cl p{grid-column:2}}
 </style>
 </head>
 <body class="product">
@@ -746,30 +745,30 @@ footer{border-top:1px solid var(--line);background:#fff;padding:66px 0 40px}
 </section>
 
 <!-- release -->
-<!-- v1.10.0 版本迭代记录：2026-09-18 首个提交到 v1.10.0 的里程碑时间线 -->
+<!-- 版本迭代记录（里程碑时间线） -->
 <section class="sec" id="changelog">
   <div class="wrap">
     <div class="shead">
-      <h2>四十天，<br>从原型到<em>工作台</em>。</h2>
-      <p>2026-09-18 的第一个提交，到今天的 v1.10.0：每一次发版都对应一个真实外业场景的反馈。下面是走过的路。</p>
+      <h2>从原型，<br>到<em>工作台</em>。</h2>
+      <p>每一次发版都对应一个真实外业场景的反馈。下面是走过的路。</p>
     </div>
     <ol class="cl">
-      <li><span class="clv">v0.1–0.8</span><time>09-18</time><p>从零起步：图斑核查、拍照取证、离线录入，第一版外业流程跑通。</p></li>
-      <li><span class="clv">v0.27</span><time>09-21</time><p>动态调查表单：字段模板化、条件显隐、专项明细——「改模板不动旧数据」从此定型。</p></li>
-      <li><span class="clv">v0.32–0.33</span><time>09-25</time><p>走向多人：手机端可用；账号体系上线，数据按人归属。</p></li>
-      <li><span class="clv">v0.34</span><time>09-27</time><p>安全加固：接口权限清单化，全部路由逐条登记分级。</p></li>
-      <li><span class="clv">v0.35</span><time>09-30</time><p>桌面级编辑：顶点改图、几何算子、项目坐标系，量算与主流 GIS 同量级。</p></li>
-      <li><span class="clv">v0.37–0.38</span><time>10-02</time><p>图戳与模板大批：154 枚图戳上图带台账；调研模板按三调体系细化到 24 类地块。</p></li>
-      <li><span class="clv">v0.40–0.41</span><time>10-08</time><p>借出回灌：外业笔记本离线借出，回来按记录级三路合并；授权闸接线完成。</p></li>
-      <li><span class="clv">v1.0</span><time>10-11</time><p>一机一码授权：设备指纹 + 离线激活 + 在线租约，编译加固出安装包。</p></li>
-      <li><span class="clv">v1.1</span><time>10-12</time><p>出门三件：离线底图包、项目包导出、调研报告 Word。</p></li>
-      <li><span class="clv">v1.2–1.3</span><time>10-13</time><p>效率大批：照片批量挂接、村情 AI 摘要、进度看板；分地类成套出图、涂鸦、语音记事、照片智能归档。</p></li>
-      <li><span class="clv">v1.4</span><time>10-14</time><p>成果浏览页：只读 HTML 一键导出给领导看；八套界面皮肤随心换。</p></li>
-      <li><span class="clv">v1.5</span><time>10-20</time><p>交付升级：成果 File GDB 按地类动态分层；旧 ArcMap .style/.lyr 配色直接导入。</p></li>
-      <li><span class="clv">v1.6</span><time>10-23</time><p>走向团体：手机 PWA 安装引导；服务器部署包（零源码 zip），单机 / 团体双形态分发。</p></li>
-      <li><span class="clv">v1.7</span><time>10-24</time><p>管理中枢：顶栏状态胶囊 + 左导航管理页；移动极简模式；蜂巢双皮肤。</p></li>
-      <li><span class="clv">v1.8</span><time>10-27</time><p>管理员数据：服务器级共享图层，成员内容三禁、配色各人各机。</p></li>
-      <li><span class="clv">v1.9–1.10</span><time>10-28</time><p>治理批：管控规则、调查模板、多期对比、备份与恢复、操作审计五件齐上。</p></li>
+      <li><span class="clv">v0.1–0.8</span><p>从零起步：图斑核查、拍照取证、离线录入，第一版外业流程跑通。</p></li>
+      <li><span class="clv">v0.27</span><p>动态调查表单：字段模板化、条件显隐、专项明细——「改模板不动旧数据」从此定型。</p></li>
+      <li><span class="clv">v0.32–0.33</span><p>走向多人：手机端可用；账号体系上线，数据按人归属。</p></li>
+      <li><span class="clv">v0.34</span><p>安全加固：接口权限清单化，全部路由逐条登记分级。</p></li>
+      <li><span class="clv">v0.35</span><p>桌面级编辑：顶点改图、几何算子、项目坐标系，量算与主流 GIS 同量级。</p></li>
+      <li><span class="clv">v0.37–0.38</span><p>图戳与模板大批：154 枚图戳上图带台账；调研模板按三调体系细化到 24 类地块。</p></li>
+      <li><span class="clv">v0.40–0.41</span><p>借出回灌：外业笔记本离线借出，回来按记录级三路合并；授权闸接线完成。</p></li>
+      <li><span class="clv">v1.0</span><p>一机一码授权：设备指纹 + 离线激活 + 在线租约，编译加固出安装包。</p></li>
+      <li><span class="clv">v1.1</span><p>出门三件：离线底图包、项目包导出、调研报告 Word。</p></li>
+      <li><span class="clv">v1.2–1.3</span><p>效率大批：照片批量挂接、村情 AI 摘要、进度看板；分地类成套出图、涂鸦、语音记事、照片智能归档。</p></li>
+      <li><span class="clv">v1.4</span><p>成果浏览页：只读 HTML 一键导出给领导看；八套界面皮肤随心换。</p></li>
+      <li><span class="clv">v1.5</span><p>交付升级：成果 File GDB 按地类动态分层；旧 ArcMap .style/.lyr 配色直接导入。</p></li>
+      <li><span class="clv">v1.6</span><p>走向团体：手机 PWA 安装引导；服务器部署包（零源码 zip），单机 / 团体双形态分发。</p></li>
+      <li><span class="clv">v1.7</span><p>管理中枢：顶栏状态胶囊 + 左导航管理页；移动极简模式；蜂巢双皮肤。</p></li>
+      <li><span class="clv">v1.8</span><p>管理员数据：服务器级共享图层，成员内容三禁、配色各人各机。</p></li>
+      <li><span class="clv">v1.9–1.10</span><p>治理批：管控规则、调查模板、多期对比、备份与恢复、操作审计五件齐上。</p></li>
     </ol>
   </div>
 </section>
