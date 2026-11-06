@@ -214,8 +214,9 @@ footer .fb i{width:9px;height:9px;border-radius:50%;background:var(--brand);disp
       <a href="#ai">AI</a>
       <a href="#delivery">交付</a>
       <a href="#changelog">迭代</a>
+      <a href="#demo">在线试用</a>
       <a class="keep" href="#release">版本</a>
-      <span class="navchip">v1.15.1</span>
+      <span class="navchip">v1.17.0</span>
     </nav>
   </div>
 </header>
@@ -226,13 +227,14 @@ footer .fb i{width:9px;height:9px;border-radius:50%;background:var(--brand);disp
     <h1>一本会定位的手记，<br>把<em>对象、记录与照片</em>连在一起。</h1>
     <p class="hero-lead">调查在图上做，记录落在地块上，照片挂进对象里——外业采一遍，成果直接出。数据留在本机与内网，不出网也能干完整的活。</p>
     <div class="hero-actions">
-      <a class="btn" href="#cap">看它做什么</a>
+      <a class="btn" href="./demo/">▶ 在线试用（只读演示）</a>
+      <a class="btn secondary" href="#cap">看它做什么</a>
       <a class="btn secondary" href="#dual">怎么部署</a>
     </div>
   </div>
   <div class="wrap">
     <div class="studio reveal">
-      <div class="studio-chrome"><span class="dots"><i></i><i></i><i></i></span><span>调研手记 · 工作台示意（顶栏胶囊 + 图上作业 + 表单）</span><span class="chrome-right">v1.15.1</span></div>
+      <div class="studio-chrome"><span class="dots"><i></i><i></i><i></i></span><span>调研手记 · 工作台示意（顶栏胶囊 + 图上作业 + 表单）</span><span class="chrome-right">v1.17.0</span></div>
       <div class="studio-caps">
         <span class="cap ok"><i></i>在线 · 队列 0</span>
         <span class="cap ok"><i></i>进度 86%</span>
@@ -423,7 +425,26 @@ footer .fb i{width:9px;height:9px;border-radius:50%;background:var(--brand);disp
       <li><span class="clv">v1.13</span><p>权限与体验修复批：部门负责人层级与账号等级徽标；调查模板 .json 导入导出；管理台整屏接管；村端电脑/Pad 双栏常驻地图；台账预置行与报送撤回；问卷设计器折叠展开；队列死组隔离等实测修复。</p></li>
       <li><span class="clv">v1.14</span><p>村界与子项目批：村界全局共享（一单位一套），区镇字段与按村名自动匹配下发、列表模糊搜索；大项目可按村/片区拆子项目，父看板汇总；台账行级位置支持点/线/面与并入去向自选；副本字段可裁剪——村里只填设计人勾的几项，其余并入留空；顶栏项目胶囊弹窗。</p></li>
       <li><span class="clv">v1.15</span><p>单机版的局域网入口：桌面版加「局域网访问」开关与访问口令，手机同网直连本机（默认关、关即断）；问卷设计器改三联——左编辑、中村端实景预览、右地图；台账地类可选项与地段级联、地块字段一键导入台账、村端填值预灌图斑；诉求字段补项目名称与是否入市；一条记录出错不再拖垮整批提交。</p></li>
+      <li><span class="clv">v1.16</span><p>台账能力批：台账改左右式（字段名在左、填写在右）的问答卡布局，行字段可各自指定标点/标线/不标；一行可标多处要素；模板扩展合计行、自定义候选清单（单选多选共用）、地类-地段级联与多选；规划诉求字段按项目名称与是否入市细化；预览态可直接作答与画图斑。</p></li>
+      <li><span class="clv">v1.17</span><p>设计器八项增强 + 手机端外业：条件显示升级为且/或分组与多算子（属于/不属于/大于/小于/包含等），量好条件不再消失；台账行列可调序；单选多选支持「其他」自填；题目折叠拓展；问卷一键转单文件静态网页（可打印、可勾选）；手机端外业采集页——四类清单拍照、轨迹记录、GPS 定位 + 地图点选修正、离线队列自动补传。</p></li>
     </ol>
+  </div>
+</section>
+
+<section class="sec" id="demo">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow">在线试用</div>
+      <h2>不用装、不用授权，<br>先<em>点一遍</em>再说。</h2>
+    </div>
+    <div class="del-grid">
+      <div class="del reveal"><span class="lab">能点什么</span><h4>完整系统快照</h4><p>24 个图斑、10 枚设施图戳、8 条记录、4 条诉求、1 条轨迹全部在位；地图缩放、目录点选、专项表单、台账填写都能操作。</p></div>
+      <div class="del reveal"><span class="lab">数据边界</span><h4>合成示例 · 只读</h4><p>页面里没有一行业务数据出网，设备指纹与密钥已全部脱敏；所有保存类操作统一返回「演示版为只读快照」。</p></div>
+      <div class="del reveal"><span class="lab">本地打开</span><h4>静态页，不需要启动器</h4><p>和离线成果页一样，只需任意静态服务器指向该目录即可；注意不能双击 index.html（Service Worker 需要 http 环境）。</p></div>
+    </div>
+    <div class="hero-actions" style="justify-content:flex-start;margin-top:28px">
+      <a class="btn" href="./demo/">▶ 打开在线演示</a>
+    </div>
   </div>
 </section>
 
@@ -433,10 +454,10 @@ footer .fb i{width:9px;height:9px;border-radius:50%;background:var(--brand);disp
     <h2>从现场记录，<br>走向<em style="color:#dcb675">项目成果</em>。</h2>
     <p class="sub2">连接外业调查、资料整理与团队协作——每一步都落在证据上。</p>
     <div class="stats">
-      <span class="stat"><b>v1.15.1</b>当前版本</span>
-      <span class="stat"><b>166</b>API 路由</span>
-      <span class="stat"><b>1057</b>自动化测试</span>
-      <span class="stat"><b>31</b>业务数据表</span>
+      <span class="stat"><b>v1.17.0</b>当前版本</span>
+      <span class="stat"><b>170</b>API 路由</span>
+      <span class="stat"><b>1178</b>自动化测试</span>
+      <span class="stat"><b>34</b>业务数据表</span>
     </div>
     <div class="release-foot">
       <span>本地优先 · 离线可用 · <strong>数据边界写在设计里</strong></span>

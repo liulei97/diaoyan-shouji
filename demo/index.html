@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#0b121d" />
+    <link rel="icon" href="./pwa-icon.svg" type="image/svg+xml" />
+    <title>调研手记 · 在线演示（只读）</title>
+    <style>
+      #demo-banner{position:fixed;left:0;right:0;top:0;z-index:9999;display:flex;gap:10px;align-items:center;
+        justify-content:center;padding:8px 14px;background:linear-gradient(90deg,#8a5200,#c0392b);
+        color:#fff;font:13px/1.5 -apple-system,"Segoe UI","Microsoft YaHei",sans-serif}
+      #demo-banner a{color:#ffe9c4;text-decoration:underline;margin-left:4px}
+      body.demo-banner-on{padding-top:38px}
+    </style>
+  </head>
+  <body>
+    <div id="demo-banner">
+      在线演示（只读快照）：数据为合成示例，修改不会保存。
+      <a href="./" id="demo-reload">重置演示</a>
+    </div>
+    <div id="app">演示加载中…</div>
+    <script>
+      // —— 演示版引导（必须在应用 bundle 之前执行）——
+      // ① 子路径部署适配：应用内请求写的是绝对路径 /api/xxx、/icons/xxx.png，
+      //    挂在 https://liulei97.github.io/diaoyan-shouji/demo/ 下时会跳出 SW 作用域 /
+      //    打到站点根目录，这里改写到当前目录下；挂根路径时是恒等变换。
+      // ② 首启竞态：SW 尚未接管时 API 会被打到真实静态服务器（404），
+      //    故 API 请求先等 navigator.serviceWorker.ready + controller 再发。
+      (function () {
+        var BASE = location.pathname.replace(/[^/]*$/, '')   // 例如 '/diaoyan-shouji/demo/'
+        var SCOPED_PREFIXES = ['/api/', '/icons/']
+        var nativeFetch = window.fetch ? window.fetch.bind(window) : null
+        var readyPromise = null
+
+        function scopeUrl(url) {
+          try {
+            var u = new URL(url, location.href)
+            if (u.origin !== location.origin) return url
+            for (var i = 0; i < SCOPED_PREFIXES.length; i++) {
+              var p = SCOPED_PREFIXES[i]
+              if (u.pathname.indexOf(p) === 0) {
+                return BASE + u.pathname.slice(1) + u.search + u.hash
+              }
+            }
+          } catch (e) {}
+          return url
+        }
+
+        function controlled() {
+          if (!('serviceWorker' in navigator)) return Promise.resolve(false)
+          if (navigator.serviceWorker.controller) return Promise.resolve(true)
+          if (!readyPromise) {
+            readyPromise = navigator.serviceWorker.ready.then(function () {
+              if (navigator.serviceWorker.controller) return true
+              return new Promise(function (resolve) {
+                var timer = setTimeout(function () {
+                  resolve(!!navigator.serviceWorker.controller)
+                }, 5000)
+                navigator.serviceWorker.addEventListener('controllerchange', function () {
+                  clearTimeout(timer)
+                  resolve(true)
+                }, { once: true })
+              })
+            }).catch(function () { return false })
+          }
+          return readyPromise
+        }
+
+        if (nativeFetch) {
+          window.fetch = function (input, init) {
+            // 应用里 API 调用全是字符串 URL；Request/URL 对象原样放行。
+            if (typeof input !== 'string') return nativeFetch(input, init)
+            var target = scopeUrl(input)
+            if (target === input) return nativeFetch(input, init)
+            // 只有 API 需要等 SW 接管；/icons/ 等静态图直接走
+            if (target.indexOf(BASE + 'api/') !== 0) return nativeFetch(target, init)
+            return controlled().then(function () { return nativeFetch(target, init) })
+          }
+        }
+
+        document.body.classList.add('demo-banner-on')
+        // 重置演示 = 清掉页面缓存与 SW 存储再刷新（只读快照无本地数据，顺手清 cache 保证取到最新演示数据）
+        document.getElementById('demo-reload').addEventListener('click', async (event) => {
+          event.preventDefault()
+          try {
+            const keys = await caches.keys()
+            await Promise.all(keys.map(k => caches.delete(k)))
+          } catch {}
+          location.reload()
+        })
+        window.addEventListener('error', (event) => {
+          const root = document.getElementById('app')
+          if (root && !root.querySelector('.app-shell')) root.textContent = `演示加载失败：${event.message}`
+        })
+      })()
+    </script>
+    <!-- 演示 SW：尽早注册，尽量在应用首次请求前接管（作用域 = 本目录） -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('./sw.js', { scope: './' }).catch(() => {})
+      }
+    </script>
+    <link rel="stylesheet" crossorigin href="./assets/theme-v0331-vJreLILw.css">
+    <link rel="stylesheet" crossorigin href="./assets/QuestionnaireRenderer-DwSberiJ.css">
+    <link rel="stylesheet" crossorigin href="./assets/maplibre-gl-JR8eJ17e.css">
+    <script type="module" crossorigin src="./assets/main-CBaLU8GG.js"></script>
+  </body>
+</html>

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+  <defs>
+    <mask id="nb">
+      <rect x="28" y="52" width="184" height="182" rx="38" fill="#fff"/>
+      <rect x="44" y="84" width="28" height="120" rx="14" fill="#000"/>
+      <rect x="96" y="140" width="90" height="24" rx="12" fill="#000"/>
+      <rect x="96" y="178" width="70" height="22" rx="11" fill="#000"/>
+    </mask>
+    <mask id="pn">
+      <circle cx="186" cy="92" r="46" fill="#fff"/>
+      <path d="M152 114 L220 114 L186 188 Z" fill="#fff"/>
+      <circle cx="186" cy="92" r="17" fill="#000"/>
+    </mask>
+  </defs>
+  <rect x="28" y="52" width="184" height="182" rx="38" fill="#196B64" mask="url(#nb)"/>
+  <g mask="url(#pn)" fill="#F57A4D">
+    <circle cx="186" cy="92" r="46"/>
+    <path d="M152 114 L220 114 L186 188 Z"/>
+  </g>
+</svg>

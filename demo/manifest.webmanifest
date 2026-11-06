@@ -1,0 +1,35 @@
+{
+  "name": "调研手记",
+  "short_name": "调研手记",
+  "version": "1.17.0",
+  "description": "规划外业工作台——一本会定位的手记，链接对象、记录与照片；本地优先，离线可用",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0b121d",
+  "theme_color": "#0b121d",
+  "lang": "zh-CN",
+  "icons": [
+    { "src": "/assets/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/assets/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/assets/icons/icon-192-maskable.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable" },
+    { "src": "/assets/icons/icon-512-maskable.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" },
+    { "src": "/pwa-icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ],
+  "shortcuts": [
+    {
+      "name": "外业采集（拍照与轨迹）",
+      "short_name": "外业采集",
+      "description": "按清单给图斑、设施、记录、诉求补现场照片，顺带记一条轨迹",
+      "url": "/photo.html",
+      "icons": [{ "src": "/pwa-icon.svg", "sizes": "any", "type": "image/svg+xml" }]
+    },
+    {
+      "name": "村端填报",
+      "short_name": "填报",
+      "description": "村级报送问卷填写",
+      "url": "/fill.html",
+      "icons": [{ "src": "/pwa-icon.svg", "sizes": "any", "type": "image/svg+xml" }]
+    }
+  ]
+}
