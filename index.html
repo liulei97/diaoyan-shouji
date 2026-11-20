@@ -7,7 +7,7 @@
 <meta name="theme-color" content="#f7f7f3">
 <meta property="og:title" content="调研手记 · 把外业调研装进一本手记">
 <meta property="og:description" content="把外业调研，装进一本手记。">
-<title>调研手记 · v1.29.4 —— 蜂巢工作台风</title>
+<title>调研手记 · v2.1.0 —— 新界面重写</title>
 <style>
 /* ============ 蜂巢工作台设计语言（源自蜂巢引擎 V14 学习落地，色板经原型实测） ============ */
 :root{
@@ -230,7 +230,7 @@ footer .fb i{width:9px;height:9px;border-radius:50%;background:var(--brand);disp
       <a href="#changelog">迭代</a>
       <a href="#demo">在线试用</a>
       <a class="keep" href="#release">版本</a>
-      <span class="navchip">v1.29.4</span>
+      <span class="navchip">v2.1.0</span>
     </nav>
   </div>
 </header>
@@ -248,7 +248,7 @@ footer .fb i{width:9px;height:9px;border-radius:50%;background:var(--brand);disp
   </div>
   <div class="wrap">
     <div class="studio reveal">
-      <div class="studio-chrome"><span class="dots"><i></i><i></i><i></i></span><span>调研手记 · 工作台示意（顶栏胶囊 + 图上作业 + 表单）</span><span class="chrome-right">v1.29.4</span></div>
+      <div class="studio-chrome"><span class="dots"><i></i><i></i><i></i></span><span>调研手记 · 工作台示意（顶栏胶囊 + 图上作业 + 表单）</span><span class="chrome-right">v2.1.0</span></div>
       <div class="studio-caps">
         <span class="cap ok"><i></i>在线 · 队列 0</span>
         <span class="cap ok"><i></i>进度 86%</span>
@@ -464,7 +464,7 @@ footer .fb i{width:9px;height:9px;border-radius:50%;background:var(--brand);disp
       <li><span class="clv">v1.24</span><p>按项目分库：meta + 每项目独立 sqlite，单库模式行为不变；备份/校验/恢复、归档导出、项目包导入、借出回灌两种布局全接通。</p></li>
       <li><span class="clv">v1.24.1</span><p>村界/图层/定义查询批：村界上传按列语义判村名区镇；普通图层渲染修复；图例标题行直达定义查询弹窗（字段取值自动列出，地图层与预览层同口径）；左侧栏改数据/图层页签可整栏收起。</p></li>
       <li><span class="clv">v1.25</span><p>结构拆分批（行为零变化）：187 条接口按域归位、报送并入链独立成服务、前端拆 6 个 composable；全量 1364 项自动化测试与 8 步 UI 冒烟守着——这版没有新按钮，但后面每一次改动都更稳。</p></li>
-      <li><span class="clv">v1.26</span><p>手机派活批：手机任务（推送四类对象、任务地图、拍照/走访/完成、进度看板与撤回）、待传打包换机、单机稳定 CA 与 /join 三步接入、村码 30 天免密登录与应用内扫一扫；photo.html 重构为五屏。</p></li><li><span class="clv">v1.26.1</span><p>收口批：手机端「能收工」——照片绑定图斑、本机留存与补传归档、拍摄点 GPS 可见；壳侧补 Share 分享插件、Android 定位权限与 iOS 本地网络探测；局域网换 IP 后证书自动重签、地址自动更新。</p></li><li><span class="clv">v1.27</span><p>手机能力批：现场新增点/线/面并直接入队、对象级地图标注气泡、任务内自由拍照与电脑端未归属照片指派、台账行一键定位；单机复活村问卷（AUTH=0 直通）；iPad 触屏与双栏适配。</p></li><li><span class="clv">v1.28</span><p>主线功能批：批量建村号按区→镇→村三级勾选、推送弹层地图选点与勾选实时互通、二维码可存 PNG 打印、多村归属置灰与村界一键开关、服务器换 IP/证书临期自动重签（cert-watch 定时器）。</p></li><li><span class="clv">v1.29</span><p>村级分发批：按村切片借出包——一村一包、借出期行级只读、单机新建默认归包村、回灌只增改不传播删除（新增/更新/冲突/忽略对账单）；同日修复批：按项目/按村两种导出口径、回灌失败按 apply 前快照恢复、重开=退回村端修改、现场待并入补并入、手机拍照完成=原件到达、写锁下沉到各写入口。</p></li>
+      <li><span class="clv">v1.26</span><p>手机派活批：手机任务（推送四类对象、任务地图、拍照/走访/完成、进度看板与撤回）、待传打包换机、单机稳定 CA 与 /join 三步接入、村码 30 天免密登录与应用内扫一扫；photo.html 重构为五屏。</p></li><li><span class="clv">v1.26.1</span><p>收口批：手机端「能收工」——照片绑定图斑、本机留存与补传归档、拍摄点 GPS 可见；壳侧补 Share 分享插件、Android 定位权限与 iOS 本地网络探测；局域网换 IP 后证书自动重签、地址自动更新。</p></li><li><span class="clv">v1.27</span><p>手机能力批：现场新增点/线/面并直接入队、对象级地图标注气泡、任务内自由拍照与电脑端未归属照片指派、台账行一键定位；单机复活村问卷（AUTH=0 直通）；iPad 触屏与双栏适配。</p></li><li><span class="clv">v1.28</span><p>主线功能批：批量建村号按区→镇→村三级勾选、推送弹层地图选点与勾选实时互通、二维码可存 PNG 打印、多村归属置灰与村界一键开关、服务器换 IP/证书临期自动重签（cert-watch 定时器）。</p></li><li><span class="clv">v2.0</span><p>存储与形态双线：SQLite 单机 / PostgreSQL 团队两形态同源，跨形态借出回灌实证；后端路线全量落地（1495 项自动化测试）。</p></li><li><span class="clv">v2.1</span><p>界面重写完全体：地图工作台 / 对象台账 / 报送 / 管理台全部新壳；三端同号（网页、桌面壳 NSIS、手机壳正式签名）；深链 <code>?screen=fill|photo</code>；新增进度看板（服务端 SQL 统计）、选址速判、涂鸦与放大镜、底图热切换、修订回滚、PWA 安装引导；桌面壳关闭即入托盘、退出无残留。</p></li><li><span class="clv">v1.29</span><p>村级分发批：按村切片借出包——一村一包、借出期行级只读、单机新建默认归包村、回灌只增改不传播删除（新增/更新/冲突/忽略对账单）；同日修复批：按项目/按村两种导出口径、回灌失败按 apply 前快照恢复、重开=退回村端修改、现场待并入补并入、手机拍照完成=原件到达、写锁下沉到各写入口。</p></li>
     </ol>
   </div>
 </section>
@@ -476,7 +476,7 @@ footer .fb i{width:9px;height:9px;border-radius:50%;background:var(--brand);disp
       <h2>不用装、不用授权，<br>先<em>点一遍</em>再说。</h2>
     </div>
     <div class="del-grid">
-      <div class="del reveal"><span class="lab">能点什么</span><h4>完整系统快照</h4><p>24 个图斑、10 枚设施图戳、8 条记录、4 条诉求、1 条轨迹全部在位；地图缩放、目录点选、专项表单、台账填写都能操作。</p></div>
+      <div class="del reveal"><span class="lab">能点什么</span><h4>2.1.0 新界面快照</h4><p>12 个图斑、6 枚设施图戳、8 条记录、4 条诉求全部在位；地图缩放与底图切换、对象台账、进度看板（12 副本 / 8 记录 / 75% 核实）、出图页、村端填报与手机采集两屏都能点开。</p></div>
       <div class="del reveal"><span class="lab">数据边界</span><h4>合成示例 · 只读</h4><p>页面里没有一行业务数据出网，设备指纹与密钥已全部脱敏；所有保存类操作统一返回「演示版为只读快照」。</p></div>
       <div class="del reveal"><span class="lab">本地打开</span><h4>静态页，不需要启动器</h4><p>和离线成果页一样，只需任意静态服务器指向该目录即可；注意不能双击 index.html（Service Worker 需要 http 环境）。</p></div>
     </div>
@@ -492,7 +492,7 @@ footer .fb i{width:9px;height:9px;border-radius:50%;background:var(--brand);disp
     <h2>从现场记录，<br>走向<em style="color:#dcb675">项目成果</em>。</h2>
     <p class="sub2">连接外业调查、资料整理与团队协作——每一步都落在证据上。</p>
     <div class="stats">
-      <span class="stat"><b>v1.29.4</b>当前版本</span>
+      <span class="stat"><b>v2.1.0</b>当前版本</span>
       <span class="stat"><b>207</b>API 路由</span>
       <span class="stat"><b>1418</b>自动化测试</span>
       <span class="stat"><b>35</b>业务数据表</span>

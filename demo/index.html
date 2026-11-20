@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <meta name="theme-color" content="#0b121d" />
     <link rel="icon" href="./pwa-icon.svg" type="image/svg+xml" />
-    <title>调研手记 · 在线演示（只读）</title>
+    <title>调研手记 2.1.0 · 在线演示（只读）</title>
     <style>
       #demo-banner{position:fixed;left:0;right:0;top:0;z-index:9999;display:flex;gap:10px;align-items:center;
-        justify-content:center;padding:8px 14px;background:linear-gradient(90deg,#8a5200,#c0392b);
+        justify-content:center;padding:8px 14px;background:linear-gradient(90deg,#1d4f41,#2f6b4f);
         color:#fff;font:13px/1.5 -apple-system,"Segoe UI","Microsoft YaHei",sans-serif}
       #demo-banner a{color:#ffe9c4;text-decoration:underline;margin-left:4px}
       body.demo-banner-on{padding-top:38px}
@@ -16,7 +16,7 @@
   </head>
   <body>
     <div id="demo-banner">
-      在线演示（只读快照）：数据为合成示例，修改不会保存。
+      在线演示（只读快照 · 2.1.0 新界面）：数据为合成示例，任何修改都不会保存。
       <a href="./" id="demo-reload">重置演示</a>
     </div>
     <div id="app">演示加载中…</div>
@@ -27,9 +27,10 @@
       //    打到站点根目录，这里改写到当前目录下；挂根路径时是恒等变换。
       // ② 首启竞态：SW 尚未接管时 API 会被打到真实静态服务器（404），
       //    故 API 请求先等 navigator.serviceWorker.ready + controller 再发。
+      window.__DEMO__ = true;
       (function () {
         var BASE = location.pathname.replace(/[^/]*$/, '')   // 例如 '/diaoyan-shouji/demo/'
-        var SCOPED_PREFIXES = ['/api/', '/icons/']
+        var SCOPED_PREFIXES = ['/api/', '/icons/', '/manifest-icon-']
         var nativeFetch = window.fetch ? window.fetch.bind(window) : null
         var readyPromise = null
 
@@ -91,7 +92,7 @@
         })
         window.addEventListener('error', (event) => {
           const root = document.getElementById('app')
-          if (root && !root.querySelector('.app-shell')) root.textContent = `演示加载失败：${event.message}`
+          if (root && !root.querySelector('.app-shell') && !root.querySelector('.fill-root') && !root.querySelector('.m-app')) root.textContent = `演示加载失败：${event.message}`
         })
       })()
     </script>
@@ -101,10 +102,6 @@
         navigator.serviceWorker.register('./sw.js', { scope: './' }).catch(() => {})
       }
     </script>
-    <link rel="stylesheet" crossorigin href="./assets/theme-v0331-CyLF38BG.css">
-    <link rel="stylesheet" crossorigin href="./assets/QuestionnaireRenderer-CFGQS1xI.css">
-    <link rel="stylesheet" crossorigin href="./assets/main-MQsNx08c.css">
-    <link rel="stylesheet" crossorigin href="./assets/maplibre-gl-JR8eJ17e.css">
-    <script type="module" crossorigin src="./assets/main-C3nu_3HU.js"></script>
+    <script type="module" crossorigin src="./assets/index-DfRQN75c.js"></script>
   </body>
 </html>
